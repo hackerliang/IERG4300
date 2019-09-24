@@ -8,7 +8,7 @@ import sys
 import fileinput
 
 # Remove the first line.
-lines = sys.stdin
+lines = fileinput.input('small_dataset.csv')
 next(lines)
 
 for line in lines:
@@ -17,4 +17,4 @@ for line in lines:
     # Split each line into a list of information.
     line_data = line.split(',', 2)
     # Reorganize the data and output.
-    sys.stdout.write('(%s, %s)\t%s'.format(line_data[1], line_data[0], line_data[2]))
+    print('({}, {})\t{}'.format(line_data[1], line_data[0], line_data[2]))
