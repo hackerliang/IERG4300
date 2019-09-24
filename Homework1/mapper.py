@@ -8,7 +8,7 @@ import sys
 import fileinput
 
 # Remove the first line.
-lines = fileinput.input('small_dataset.csv')
+lines = fileinput.input()
 next(lines)
 
 for line in lines:
