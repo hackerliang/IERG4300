@@ -21,9 +21,16 @@ for line in fileinput.input():
     line_data_1_split = line_data[1][1:-1].split(',')
     user_id = int(line_data_1_split[0])
     rating = float(line_data_1_split[1])
+
+    # Debug
+    # print('{}\t{}\t{}'.format(line_data[0], user_id, rating))
+
     # Add the rating to the dictionary.
     if rating in rating_uid:
-        rating_uid[rating] += [user_id]
+        if user_id not in rating_uid[rating]:
+            rating_uid[rating] += [user_id]
+        else:
+            continue
     else:
         rating_uid[rating] = [user_id]
 
