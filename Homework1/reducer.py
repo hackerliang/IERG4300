@@ -33,6 +33,8 @@ for line in fileinput.input():
             continue
     else:
         rating_uid[rating] = [user_id]
+    
+    # TODO: Build the record as two users a pair.
 
 # Sort the user list in each of the values, and print out.
 for _, value in rating_uid.items():
