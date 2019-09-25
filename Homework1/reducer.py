@@ -33,9 +33,12 @@ for line in fileinput.input():
             continue
     else:
         rating_uid[rating] = [user_id]
-    
-    # TODO: Build the record as two users a pair.
 
-# Sort the user list in each of the values, and print out.
 for _, value in rating_uid.items():
-    print('{}\t1'.format(sorted(value)))
+    # Build the record as two users a pair.
+    # Sort the value.
+    value = sorted(value)
+    # Go through the user list, form the pairs.
+    for i in range(0, len(value)):
+        for j in range(i, len(value)):
+            print('({},{})\t1'.format(value[i], value[j]))
