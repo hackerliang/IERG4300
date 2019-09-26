@@ -41,6 +41,7 @@ class SimilarUsers(MRJob):
         yield None, (sum(counts), user_pair)
 
     def step_3_reducer(self, _, total_counts):
+        """Sort the output by number of counts."""
         # Modify `reverse` parameter for sorting order.
         # reverse=True: descending order,
         # reverse=False: ascending order.
