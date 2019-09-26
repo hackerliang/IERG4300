@@ -38,28 +38,21 @@ class SimilarUsers(MRJob):
     
     def step_2_reducer(self, user_pair, counts):
         """Sum up the total counts for same ratings."""
-        yield user_pair, sum(counts)
-    
-    def step_3_mapper(self, user_pair, total_counts):
-        """Pass the data to reducer."""
-        yield user_pair, total_counts
+        yield None, (sum(counts), user_pair)
 
-    def step_3_reducer(self, user_pair, total_counts):
-        """Calculate the top 3 and last 3 user pairs."""
-        sorted_list = []
-        for item in total_counts:
-            sorted_list.append(item)
-            sorted_list.sort()
-        for item in sorted_list:
-            yield user_pair, item
+    def step_3_reducer(self, _, total_counts):
+        # Modify `reverse` parameter for sorting order.
+        # reverse=True: descending order,
+        # reverse=False: ascending order.
+        for count, key in sorted(total_counts, reverse=False):
+            yield int(count), key
 
     def steps(self):
         return [MRStep(mapper=self.step_1_mapper,
                        reducer=self.step_1_reducer),
                 MRStep(mapper=self.step_2_mapper,
                        reducer=self.step_2_reducer),
-                MRStep(mapper=self.step_3_mapper,
-                       reducer=self.step_3_reducer)]
+                MRStep(reducer=self.step_3_reducer)]
 
 if __name__ == '__main__':
     SimilarUsers.run()
