@@ -1,3 +1,11 @@
+"""SimilarUsers.py
+For Homework #1, IERG4300, S1 2019-2020, CUHK
+Written by Junru Zhong (1155130306)
+All rights reserved.
+
+Last modified: Sept 26, 2019
+"""
+
 from mrjob.job import MRJob
 from mrjob.step import MRStep
 import csv
@@ -49,6 +57,7 @@ class SimilarUsers(MRJob):
             yield int(count), key
 
     def steps(self):
+        """Defining steps to run multiple MapReduce jobs."""
         return [MRStep(mapper=self.step_1_mapper,
                        reducer=self.step_1_reducer),
                 MRStep(mapper=self.step_2_mapper,
