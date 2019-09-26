@@ -10,6 +10,7 @@ from mrjob.job import MRJob
 from mrjob.step import MRStep
 import csv
 
+
 class SimilarUsers(MRJob):
 
     # Enable secondary sort
@@ -18,7 +19,8 @@ class SimilarUsers(MRJob):
     def step_1_mapper(self, _, line):
         """movieId be the key, the combination of rating and userId be the value."""
         # Convert each line into a dictionary
-        row = dict(zip(['userId', 'movieId', 'rating'], [a.strip() for a in csv.reader([line]).__next__()]))
+        row = dict(zip(['userId', 'movieId', 'rating'], [a.strip()
+                                                         for a in csv.reader([line]).__next__()]))
         try:
             # Yield key-value pairs
             # Will be sorted by movie_id (key), and rating (secondary sort)
@@ -43,7 +45,7 @@ class SimilarUsers(MRJob):
             for i in range(0, len(users_list)):
                 for j in range(i + 1, len(users_list)):
                     yield (users_list[i], users_list[j]), 1
-    
+
     def step_2_reducer(self, user_pair, counts):
         """Sum up the total counts for same ratings."""
         yield None, (sum(counts), user_pair)
@@ -63,6 +65,7 @@ class SimilarUsers(MRJob):
                 MRStep(mapper=self.step_2_mapper,
                        reducer=self.step_2_reducer),
                 MRStep(reducer=self.step_3_reducer)]
+
 
 if __name__ == '__main__':
     SimilarUsers.run()
