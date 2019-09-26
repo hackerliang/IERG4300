@@ -5,6 +5,7 @@ Output: (user_id_1,user_id_2) \t count_of_same_rating
 """
 
 import fileinput
+import operator
 
 # Initialize the dictionary
 user_pair_count = {}
@@ -26,5 +27,9 @@ for line in fileinput.input():
     else:
         user_pair_count[user_pair] += float(line_data[1])
 
+# Sort the dictionary.
+user_pair_count = dict(sorted(user_pair_count.items(), key=operator.itemgetter(1), reverse=True))
+
+# Output all items in the dictionary.
 for key, value in user_pair_count.items():
     print('{}\t{}'.format(key, value))

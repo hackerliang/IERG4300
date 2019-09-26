@@ -40,5 +40,5 @@ for _, value in rating_uid.items():
     value = sorted(value)
     # Go through the user list, form the pairs.
     for i in range(0, len(value)):
-        for j in range(i, len(value)):
+        for j in range(i + 1, len(value)):
             print('({},{})\t1'.format(value[i], value[j]))
