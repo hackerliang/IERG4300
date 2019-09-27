@@ -41,7 +41,7 @@ class SimilarUsers(MRJob):
 
     def step_2_mapper(self, movie_id, users_same_rating):
         """Extract the user pairs from users that gave one movie the same rating."""
-        for rating, users_list in users_same_rating.items():
+        for _, users_list in users_same_rating.items():
             for i in range(0, len(users_list)):
                 for j in range(i + 1, len(users_list)):
                     yield (users_list[i], users_list[j]), 1
@@ -55,7 +55,7 @@ class SimilarUsers(MRJob):
         # Modify `reverse` parameter for sorting order.
         # reverse=True: descending order,
         # reverse=False: ascending order.
-        for count, key in sorted(total_counts, reverse=False):
+        for count, key in sorted(total_counts, reverse=True):
             yield int(count), key
 
     def steps(self):
