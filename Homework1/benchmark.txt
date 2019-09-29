@@ -1,0 +1,3 @@
+For step 1 of the MapReduce job in quation a,
+1. Map & reduce task = 10, reduce job need 30 mins to grow up 1%.
+2. Map & reduce task = 100, reduce job need 14 mins to grow up 1%.
