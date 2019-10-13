@@ -208,7 +208,7 @@ if __name__ == '__main__':
     # FIRST: run these three MR tasks.
     # UserRatedMovies.run()
     # UserPairsSameRates.run()
-    # UserPairsSameMovies.run()
+    UserPairsSameMovies.run()
 
     # THEN: calaculate similarity scores by this function.
-    calculate_similarity()
+    # calculate_similarity()

@@ -21,7 +21,8 @@ def main():
     )
     runner = mr_job.make_runner()
     # runner.input_paths=['gs://dataproc-data-storage/movie-rating-input/large_dataset.csv']
-    runner._launch()
+    # runner._launch()
+    runner.run()
 
 if __name__ == '__main__':
     main()
