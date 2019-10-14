@@ -11,6 +11,7 @@ def read_baskets(path, threshold):
     @param: path to data, str.
     @param: threshold, float.
     @return: baskets, 2D list.
+    @return: freq_count, int.
     """
     # Format of the file:
     # One line -> one basket (word separated by \t)
@@ -31,7 +32,7 @@ def read_baskets(path, threshold):
 def freq_items(baskets, freq_count):
     """Find the individual items appear frequently.
     @param: baskets, 2D list.
-    @param: threshold, int.
+    @param: min count for a frequent item, int.
     @return: frequent individual items with counts, dict.
     """
     items = {}
@@ -50,14 +51,31 @@ def freq_items(baskets, freq_count):
     return freq_items
 
 
-def freq_pairs(baskets, freq_items, freq_count):
+def freq_pairs(freq_items, freq_count):
     """Find the frequent item pairs.
-    @param: baskets, 2D list.
     @param: frequent individual items with counts, dict.
-    @param: threshold, int.
+    @param: min count for a frequent pair, int.
     @return: frequent pairs with counts, dict.
     """
-    pass
+    # Construct pairs from frequent items.
+    # If a pair is frequent, both of the members are frequent.
+    pairs = {}
+    items = freq_items.keys()
+    for i in range(len(items)):
+        for j in range(i, len(items)):
+            # FIXME: 'dict_keys' object is not subscriptable
+            if (items[i], items[j]) in pairs:
+                pairs[(items[i], items[j])] += 1
+            elif (items[j], items[i]) in pairs:
+                pairs[(items[j], items[i])] += 1
+            else:
+                pairs[(items[i], items[j])] = 1
+    # Remove non-frequent pairs.
+    freq_pairs = {}
+    for pair, count in pairs.items():
+        if count >= freq_count:
+            freq_pairs[pair] = count
+    return freq_pairs
 
 
 if __name__ == '__main__':
