@@ -24,6 +24,7 @@ def read_baskets(path):
     return baskets
 
 
+
 def freq_items(baskets, threshold):
     """Find the individual items appear frequently.
     @param: baskets, 2D list.
