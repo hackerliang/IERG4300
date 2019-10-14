@@ -1,4 +1,4 @@
-"""APriori.py
+"""SON.py
 This file implements the A-Priori algorithm for finding similar item sets.
 A part of Homework #2, IERG4300, CUHK, S1 2019-2020.
 """
