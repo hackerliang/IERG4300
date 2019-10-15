@@ -4,6 +4,8 @@ A part of Homework #2, IERG4300, CUHK, S1 2019-2020.
 """
 
 import glob
+import json
+from operator import itemgetter
 
 
 def read_baskets(path, threshold):
@@ -25,7 +27,7 @@ def read_baskets(path, threshold):
                 words = line.split()
                 baskets += [sorted(words)]
     # Convert precentage to count
-    freq_count = threshold * len(baskets)
+    freq_count = int(threshold * len(baskets))
     return baskets, freq_count
 
 
@@ -51,8 +53,9 @@ def freq_items(baskets, freq_count):
     return freq_items
 
 
-def freq_pairs(freq_items, freq_count):
+def freq_pairs(baskets, freq_items, freq_count):
     """Find the frequent item pairs.
+    @param: the baskets, 2D list
     @param: frequent individual items with counts, dict.
     @param: min count for a frequent pair, int.
     @return: frequent pairs with counts, dict.
@@ -60,25 +63,33 @@ def freq_pairs(freq_items, freq_count):
     # Construct pairs from frequent items.
     # If a pair is frequent, both of the members are frequent.
     pairs = {}
-    items = freq_items.keys()
+    items = list(freq_items.keys())
     for i in range(len(items)):
-        for j in range(i, len(items)):
-            # FIXME: 'dict_keys' object is not subscriptable
-            if (items[i], items[j]) in pairs:
-                pairs[(items[i], items[j])] += 1
-            elif (items[j], items[i]) in pairs:
-                pairs[(items[j], items[i])] += 1
-            else:
-                pairs[(items[i], items[j])] = 1
+        for j in range(i + 1, len(items)):
+            pairs[(items[i], items[j])] = 0
+    # Find and count the pairs in each basket
+    for basket in baskets:
+        for i in range(len(basket)):
+            for j in range(i + 1, len(basket)):
+                if (basket[i], basket[j]) in pairs:
+                    pairs[(basket[i], basket[j])] += 1
+                elif (basket[j], basket[i]) in pairs:
+                    pairs[(basket[j], basket[i])] += 1
+                else:
+                    continue
     # Remove non-frequent pairs.
     freq_pairs = {}
     for pair, count in pairs.items():
         if count >= freq_count:
             freq_pairs[pair] = count
+    # Sort the dictionary.
+    freq_pairs = sorted(freq_pairs.items(), key=itemgetter(1))
     return freq_pairs
 
 
 if __name__ == '__main__':
-    baskets, freq_count = read_baskets('D:\\Datasets\\shakespeare_basket\\test')
-    # freqitems = freq_items(baskets, 1)
-    # freqpairs = freq_pairs(baskets, freq_items, 1)
+    baskets, freq_count = read_baskets('D:\\Datasets\\shakespeare_basket\\', 0.005)
+    freqitems = freq_items(baskets, 2)
+    freqpairs = freq_pairs(baskets, freqitems, 2)
+    # Save to file
+    json.dump(freqpairs, open('freq_pairs.json', 'w'), indent=2)
