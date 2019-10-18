@@ -14,7 +14,7 @@ baskets = []
 # One line is a basket.
 for line in lines:
     # Remove white spaces and line feed.
-    words = line.strip()
+    words = line.strip().split()
     baskets += [words]
 # Get support value from threshold.
 support = len(baskets) * 0.005
