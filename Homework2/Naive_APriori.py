@@ -4,16 +4,15 @@ A part of Homework #2, IERG4300, CUHK, S1 2019-2020.
 """
 
 import glob
-import json
 from operator import itemgetter
 
 
 def read_baskets(path, threshold):
     """Read baskets from files.
-    @param: path to data, str.
-    @param: threshold, float.
-    @return: baskets, 2D list.
-    @return: support, int.
+    @:param: path to data, str.
+    @:param: threshold, float.
+    @:return: baskets, 2D list.
+    @:return: support, int.
     """
     # Format of the file:
     # One line -> one basket (word separated by \t)
@@ -33,9 +32,9 @@ def read_baskets(path, threshold):
 
 def find_freq_items(baskets, support):
     """Find the individual items appear frequently.
-    @param: baskets, 2D list.
-    @param: min count for a frequent item, int.
-    @return: frequent individual items with counts, dict.
+    @:param: baskets, 2D list.
+    @:param: min count for a frequent item, int.
+    @:return: frequent individual items with counts, dict.
     """
     items = {}
     # Iterate all items, then count the appearances.
@@ -55,10 +54,10 @@ def find_freq_items(baskets, support):
 
 def find_freq_pairs(baskets, freq_items, support):
     """Find the frequent item pairs.
-    @param: the baskets, 2D list
-    @param: frequent individual items with counts, dict.
-    @param: min count for a frequent pair, int.
-    @return: frequent pairs with counts, dict.
+    @:param: the baskets, 2D list
+    @:param: frequent individual items with counts, dict.
+    @:param: min count for a frequent pair, int.
+    @:return: frequent pairs with counts, dict.
     """
     # Construct pairs from frequent items.
     # If a pair is frequent, both of the members are frequent.
@@ -83,7 +82,7 @@ def find_freq_pairs(baskets, freq_items, support):
         if count >= support:
             freq_pairs[pair] = count
     # Sort the dictionary.
-    freq_pairs = sorted(freq_pairs.items(), key=itemgetter(1))
+    freq_pairs = dict(sorted(freq_pairs.items(), key=itemgetter(1), reverse=True))
     return freq_pairs
 
 
@@ -92,4 +91,6 @@ if __name__ == '__main__':
     freqitems = find_freq_items(baskets, support)
     freqpairs = find_freq_pairs(baskets, freqitems, support)
     # Save to file
-    json.dump(freqpairs, open('freq_pairs.json', 'w'), indent=2)
+    with open('freq_pairs.tsv', 'w') as f:
+        for key, value in freqpairs.items():
+            f.write('{}\t{}\n'.format(key, value))
