@@ -15,7 +15,9 @@ for line in fileinput.input():
     # Splits key and value.
     line_data = line.split('\t')
     # Convert datatype.
-    item_1, item_2 = line_data[0][1:-1].split(',')
+    item_1, item_2 = line_data[0][1:-1].split(', ')
+    item_1 = item_1[1:-1]
+    item_2 = item_2[1:-1]
     # Save the pairs into memory
     if (item_1, item_2) in pairs:
         pairs[(item_1, item_2)] += 1

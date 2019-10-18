@@ -9,7 +9,7 @@ import fileinput
 
 pairs = {}
 # TODO: where does the support come from?
-support = 40000
+support = 1
 
 for line in fileinput.input():
     # Remove white spaces and line feed.
@@ -17,7 +17,9 @@ for line in fileinput.input():
     # Splits key and value.
     pair, count = line.split('\t', 1)
     # Convert datatype
-    item_1, item_2 = pair[1:-1].split(',')
+    item_1, item_2 = pair[1:-1].split(', ')
+    item_1 = item_1[1:-1]
+    item_2 = item_2[1:-1]
     count = int(count)
     # Save the pairs into memory
     if (item_1, item_2) in pairs:
