@@ -5,6 +5,7 @@ A part of Homework #2, IERG4300, CUHK, S1 2019-2020.
 
 import glob
 from operator import itemgetter
+import time
 
 
 def read_baskets(path, threshold):
@@ -87,10 +88,13 @@ def find_freq_pairs(baskets, freq_items, support):
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     baskets, support = read_baskets('D:\\Datasets\\shakespeare_basket\\', 0.005)
     freqitems = find_freq_items(baskets, support)
     freqpairs = find_freq_pairs(baskets, freqitems, support)
     # Save to file
-    with open('freq_pairs.tsv', 'w') as f:
+    with open('naive_freq_pairs.tsv', 'w') as f:
         for key, value in freqpairs.items():
             f.write('{}\t{}\n'.format(key, value))
+    elapsed_time = time.time() - start_time
+    print('Elapsed time: {}'.format(elapsed_time))
