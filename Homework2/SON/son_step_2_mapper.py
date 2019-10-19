@@ -11,10 +11,10 @@ frequent_pairs = {}
 pairs = {}
 
 # Read the side-loaded input file.
-with open('step_1_result.txt', 'w') as f:
+with open('step_1_result.txt', 'r') as f:
     for line in f:
         freq_pair, _ = line.split('\t')
-        tem_1, item_2 = freq_pair[0][1:-1].split(', ')
+        item_1, item_2 = freq_pair[1:-1].split(', ')
         item_1 = item_1[1:-1]
         item_2 = item_2[1:-1]
         frequent_pairs.setdefault((item_1, item_2), 0)
