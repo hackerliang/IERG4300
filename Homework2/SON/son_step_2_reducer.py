@@ -8,8 +8,8 @@ then filter out the pairs do not satisfy the minimum support.
 import fileinput
 
 pairs = {}
-# TODO: where does the support come from?
-support = 1
+# Lines of the dataset * frequency
+support = 4340062 * 0.005
 
 for line in fileinput.input():
     # Remove white spaces and line feed.
