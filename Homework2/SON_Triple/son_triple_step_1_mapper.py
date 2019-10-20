@@ -56,17 +56,11 @@ for pair, count in candidate_pairs.items():
         freq_pairs[pair] = count
 
 # Build frequent triples
-# Discard the counts of the frequent pairs.
-freq_pairs_list = freq_pairs.keys()
 # Extract the items of the pairs.
-freq_pairs_member_list = []
-for pair in freq_pairs_list:
-    freq_pairs_member_list += [pair[0]]
-    freq_pairs_member_list += [pair[1]]
+keys = set([x for pair in freq_pairs.keys() for x in pair])
 # Construct candidate triples.
-candidate_triples = {}
-for x in itertools.combinations(freq_pairs_member_list, 3):
-    candidate_triples.setdefault(x, 0)
+candidate_triples = dict.fromkeys(itertools.combinations(keys, 3), 0)
+
 # Count triples from baskets.
 for basket in baskets:
     basket_triples = itertools.combinations(basket, 3)
