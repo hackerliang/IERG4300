@@ -12,7 +12,7 @@ frequent_triples = {}
 pairs = {}
 
 # Read the side-loaded input file.
-with open('step_1_result.txt', 'r') as f:
+with open('triple_step_1_result.txt', 'r') as f:
     for line in f:
         freq_pair, _ = line.split('\t')
         item_1, item_2, item_3 = freq_pair[1:-1].split(', ')
