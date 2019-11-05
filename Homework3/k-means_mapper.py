@@ -11,7 +11,7 @@ with open('centroids.txt', 'r') as f:
     centroids = {}
     idx = 0
     for line in f.readlines():
-        centroids[idx] = np.asarray(line.strip().split(','))
+        centroids[idx] = np.asarray(line.strip().split(','), dtype=float)
         idx += 1
 
 # Read the input from STDIN.
@@ -20,12 +20,12 @@ lines = fileinput.input()
 
 data = []
 for line in lines:
-    data += [np.asarray(line.strip().split(','))]
+    data += [np.asarray(line.strip().split(','), dtype=float)]
 
 # Partial sums.
 partial_sums_counts = {}
 for i in range(10):
-    partial_sums_counts.setdefault(i, [np.zeros((784, 1)), 0])
+    partial_sums_counts.setdefault(i, [np.zeros((1, 784), dtype=float), 0])
 
 # Compute and assign items.
 # For each data point, calculate the distance between all centroids.
@@ -33,11 +33,11 @@ for item in data:
     distances = {}
     for idx, centroid in centroids.items():
         # Calculate L2 Norm.
-        distances[idx] = np.linalg.norm(item - centroid)
+        distances[idx] = np.linalg.norm(centroid - item)
     # Get the index of the cluster with minimum distance.
     cluster_id = min(distances, key=distances.get)
     # Add to partial sum.
-    partial_sums_counts[cluster_id][0] = np.add(partial_sums_counts[cluster_id], item)
+    partial_sums_counts[cluster_id][0] = np.add(partial_sums_counts[cluster_id][0], item)
     # Add count.
     partial_sums_counts[cluster_id][1] += 1
 

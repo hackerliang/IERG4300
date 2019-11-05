@@ -32,3 +32,8 @@ def save_mnist():
     np.savetxt('test_images.txt', mnist['test_images'].astype(int), fmt='%i', delimiter=",")
     np.savetxt('test_labels.txt', mnist['test_labels'].astype(int), fmt='%i', delimiter=",")
     print("Save complete.")
+
+
+if __name__ == '__main__':
+    download_mnist()
+    save_mnist()
