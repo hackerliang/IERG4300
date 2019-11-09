@@ -11,7 +11,7 @@ clusters = {}
 for line in lines:
     cluster_id, partial_sum_count = line.strip().split('\t')
     partial_sum, count = partial_sum_count.split('|')
-    partial_sum = np.asarray(partial_sum[1:-1].split(','), dtype=float)
+    partial_sum = np.asarray(partial_sum[1:-1].split(', '), dtype=float)
     count = int(count)
     cluster_id = int(cluster_id)
     # Assign partial sums and counts.

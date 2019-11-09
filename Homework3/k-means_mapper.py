@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 
 import fileinput
+import os
 
 import numpy as np
 
 # Read a file for the centroids.
 # One line one centroid. Each centroid is constructed by 784 dimension vector.
 # Items are split by commas.
-with open('centroids.txt', 'r') as f:
+with open('centroids_{}.txt'.format(int(os.environ.get('ITER_NUM')) - 1), 'r') as f:
     centroids = {}
-    idx = 0
     for line in f.readlines():
-        centroids[idx] = np.asarray(line.strip().split(','), dtype=float)
-        idx += 1
+        idx, centroids_str = line.strip().split('\t')
+        centroids[int(idx)] = np.asarray(centroids_str.strip()[1:-1].split(', '), dtype=float)
 
 # Read the input from STDIN.
 # Design: each line is a 784 dimension vector, use comma to split items.

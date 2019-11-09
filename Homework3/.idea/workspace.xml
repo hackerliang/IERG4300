@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ec7b0aa-0478-491e-af3a-ba3ca5190905" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s3-retrive-object.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k-means_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_driver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k-means_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_mapper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k-means_reducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_reducer.py" afterDir="false" />
     </list>
@@ -138,7 +139,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pre-process" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="s3-retrive-object" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Homework3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -151,7 +152,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pre-process.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/s3-retrive-object.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,16 +165,16 @@
       <item itemvalue="Python.k-means_driver" />
       <item itemvalue="Python.k-means_mapper" />
       <item itemvalue="Python.mnist_numpy" />
-      <item itemvalue="Python.pre-process" />
       <item itemvalue="Python.k-means_reducer" />
+      <item itemvalue="Python.s3-retrive-object" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.k-means_driver" />
+        <item itemvalue="Python.s3-retrive-object" />
         <item itemvalue="Python.k-means_reducer" />
         <item itemvalue="Python.k-means_mapper" />
         <item itemvalue="Python.mnist_numpy" />
-        <item itemvalue="Python.pre-process" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +190,7 @@
       <updated>1572687090194</updated>
       <workItem from="1572687091350" duration="2071000" />
       <workItem from="1572941354490" duration="13690000" />
-      <workItem from="1573267847199" duration="4456000" />
+      <workItem from="1573267847199" duration="10504000" />
     </task>
     <task id="LOCAL-00001" summary="Add Homework 3.">
       <created>1572692430030</created>
@@ -219,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573268726293</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adapt for EMR.">
+      <created>1573283806085</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1573283806085</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +251,8 @@
     <MESSAGE value="New pre-process code and k-means mapper." />
     <MESSAGE value="Run on local machine." />
     <MESSAGE value="Start working on the driver." />
-    <option name="LAST_COMMIT_MESSAGE" value="Start working on the driver." />
+    <MESSAGE value="Adapt for EMR." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapt for EMR." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -263,12 +272,24 @@
           <line>39</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/s3-retrive-object.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/k-means_driver.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Homework3$s3_retrive_object.coverage" NAME="s3-retrive-object Coverage Results" MODIFIED="1573292562894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homework3$pre_process.coverage" NAME="pre-process Coverage Results" MODIFIED="1572945876382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homework3$k_means_reducer.coverage" NAME="k-means_reducer Coverage Results" MODIFIED="1572959711906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Homework3$k_means_driver.coverage" NAME="k-means_driver Coverage Results" MODIFIED="1573293186127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homework3$k_means_mapper.coverage" NAME="k-means_mapper Coverage Results" MODIFIED="1572958138732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
