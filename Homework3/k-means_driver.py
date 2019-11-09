@@ -1,7 +1,6 @@
 import os
 import logging
 
-import requests
 import numpy as np
 import boto3
 from botocore.exceptions import ClientError
@@ -81,4 +80,4 @@ def iteration(num_iterations):
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
     generate_random_centroids()
-    # iteration(10)
+    iteration(10)
