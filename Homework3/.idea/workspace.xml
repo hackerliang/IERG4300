@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ec7b0aa-0478-491e-af3a-ba3ca5190905" name="Default Changelist" comment="Add Homework 3.">
-      <change afterPath="$PROJECT_DIR$/k-means_driver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k-means_reducer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+    <list default="true" id="9ec7b0aa-0478-491e-af3a-ba3ca5190905" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k-means_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_mapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mnist_numpy.py" beforeDir="false" afterPath="$PROJECT_DIR$/mnist_numpy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k-means_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_driver.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +55,9 @@
       <module name="Homework3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -78,6 +77,9 @@
       <module name="Homework3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -119,6 +121,9 @@
       <module name="Homework3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -184,7 +189,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572687090194</updated>
       <workItem from="1572687091350" duration="2071000" />
-      <workItem from="1572941354490" duration="13644000" />
+      <workItem from="1572941354490" duration="13690000" />
+      <workItem from="1573267847199" duration="846000" />
     </task>
     <task id="LOCAL-00001" summary="Add Homework 3.">
       <created>1572692430030</created>
@@ -200,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572947042822</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Run on local machine.">
+      <created>1572965836994</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572965836994</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +235,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Homework 3." />
     <MESSAGE value="New pre-process code and k-means mapper." />
-    <option name="LAST_COMMIT_MESSAGE" value="New pre-process code and k-means mapper." />
+    <MESSAGE value="Run on local machine." />
+    <option name="LAST_COMMIT_MESSAGE" value="Run on local machine." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

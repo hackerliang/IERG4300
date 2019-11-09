@@ -10,5 +10,20 @@ def generate_random_centroids():
     np.savetxt('centroids.txt', random_centroids.astype(int), fmt='%i', delimiter=',')
 
 
+def run_mapper():
+    COMMAND = """
+    hadoop jar 
+    """
+    pass
+
+
+def run_reducer():
+    pass
+
+
+def iteration(num_iterations):
+    pass
+
+
 if __name__ == '__main__':
     generate_random_centroids()
