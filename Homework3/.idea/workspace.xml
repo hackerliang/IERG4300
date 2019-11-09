@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ec7b0aa-0478-491e-af3a-ba3ca5190905" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k-means_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k-means_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_mapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k-means_reducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_reducer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,14 +52,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.k-means_reducer">
+  <component name="RunManager" selected="Python.k-means_driver">
     <configuration name="k-means_driver" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Homework3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -170,9 +169,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.k-means_driver" />
         <item itemvalue="Python.k-means_reducer" />
         <item itemvalue="Python.k-means_mapper" />
-        <item itemvalue="Python.k-means_driver" />
         <item itemvalue="Python.mnist_numpy" />
         <item itemvalue="Python.pre-process" />
       </list>
@@ -190,7 +189,7 @@
       <updated>1572687090194</updated>
       <workItem from="1572687091350" duration="2071000" />
       <workItem from="1572941354490" duration="13690000" />
-      <workItem from="1573267847199" duration="846000" />
+      <workItem from="1573267847199" duration="4456000" />
     </task>
     <task id="LOCAL-00001" summary="Add Homework 3.">
       <created>1572692430030</created>
@@ -213,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572965836994</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Start working on the driver.">
+      <created>1573268726293</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573268726293</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +242,8 @@
     <MESSAGE value="Add Homework 3." />
     <MESSAGE value="New pre-process code and k-means mapper." />
     <MESSAGE value="Run on local machine." />
-    <option name="LAST_COMMIT_MESSAGE" value="Run on local machine." />
+    <MESSAGE value="Start working on the driver." />
+    <option name="LAST_COMMIT_MESSAGE" value="Start working on the driver." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

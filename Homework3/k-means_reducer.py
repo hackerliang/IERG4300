@@ -18,7 +18,7 @@ for line in lines:
     if cluster_id not in clusters:
         clusters[cluster_id] = [partial_sum, count]
     else:
-        clusters[cluster_id] = [np.add(partial_sum, clusters[cluster_id][0]), clusters[cluster_id] + count]
+        clusters[cluster_id] = [np.add(partial_sum, clusters[cluster_id][0]), clusters[cluster_id][1] + count]
 
 # Calculate new centroids.
 for key, value in clusters.items():
