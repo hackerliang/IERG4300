@@ -12,7 +12,8 @@ with open('centroids_{}.txt'.format(int(os.environ.get('ITER_NUM')) - 1), 'r') a
     centroids = {}
     for line in f.readlines():
         idx, centroids_str = line.strip().split('\t')
-        centroids[int(idx)] = np.asarray(centroids_str.strip()[1:-1].split(', '), dtype=float)
+        centroids[int(idx)] = np.asarray(
+            centroids_str.strip()[1:-1].split(', '), dtype=float)
 
 # Read the input from STDIN.
 # Design: each line is a 784 dimension vector, use comma to split items.
@@ -37,7 +38,8 @@ for item in data:
     # Get the index of the cluster with minimum distance.
     cluster_id = min(distances, key=distances.get)
     # Add to partial sum.
-    partial_sums_counts[cluster_id][0] = np.add(partial_sums_counts[cluster_id][0], item)
+    partial_sums_counts[cluster_id][0] = np.add(
+        partial_sums_counts[cluster_id][0], item)
     # Add count.
     partial_sums_counts[cluster_id][1] += 1
 

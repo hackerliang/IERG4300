@@ -1,10 +1,10 @@
-import os
 import logging
+import os
 import sys
 
+import boto3
 import matplotlib.pyplot as plt
 import numpy as np
-import boto3
 from botocore.exceptions import ClientError
 
 
@@ -34,8 +34,8 @@ def generate_random_centroids():
     # Save to txt
     with open('centroids/centroids_0.txt', 'w') as f:
         for idx in range(10):
-            f.write('{}\t{}\n'.format(idx, str(random_centroids[idx].tolist())))
-    # np.savetxt('centroids/centroids_0.txt', random_centroids.astype(int), fmt='%i', delimiter=',')
+            f.write('{}\t{}\n'.format(
+                idx, str(random_centroids[idx].tolist())))
 
 
 def run_mrjob(iteration_id):
@@ -82,7 +82,8 @@ def inspect_result(iteration_id):
         centroids = {}
         for line in f.readlines():
             idx, centroids_str = line.strip().split('\t')
-            centroids[int(idx)] = [np.asarray(centroids_str.strip()[1:-1].split(', '), dtype=float), 0]
+            centroids[int(idx)] = [np.asarray(
+                centroids_str.strip()[1:-1].split(', '), dtype=float), 0]
     # Assign centroids.
     # For each data point, calculate the distance between all centroids.
     distance_sum = 0
@@ -117,7 +118,8 @@ def iteration(num_iterations):
     with open('result.txt', 'w') as f:
         for key, value in centroids_count.items():
             # Keep 2 decimal places for the report.
-            f.write('{}\t{}|{}\n'.format(key, np.around(value[0], 2).tolist(), value[1]))
+            f.write('{}\t{}|{}\n'.format(
+                key, np.around(value[0], 2).tolist(), value[1]))
     # Plot a graph for distance sums.
     plt.plot(distance_sums_iter, distance_sums)
     plt.xlabel('Iteration')

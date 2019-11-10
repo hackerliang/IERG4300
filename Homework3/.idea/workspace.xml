@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ec7b0aa-0478-491e-af3a-ba3ca5190905" name="Default Changelist" comment="">
+    <list default="true" id="9ec7b0aa-0478-491e-af3a-ba3ca5190905" name="Default Changelist" comment="Add seed number.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k-means_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/k-means_driver.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +190,7 @@
       <workItem from="1572687091350" duration="2071000" />
       <workItem from="1572941354490" duration="13690000" />
       <workItem from="1573267847199" duration="14585000" />
-      <workItem from="1573355725731" duration="2748000" />
+      <workItem from="1573355725731" duration="3603000" />
     </task>
     <task id="LOCAL-00001" summary="Add Homework 3.">
       <created>1572692430030</created>
@@ -256,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573357864118</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Save the last centroids and counts.">
+      <created>1573358516877</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1573358516877</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +291,8 @@
     <MESSAGE value="Add inspect result code." />
     <MESSAGE value="Delete useless import." />
     <MESSAGE value="Move inspect result to driver file, integrate with the procedure." />
-    <option name="LAST_COMMIT_MESSAGE" value="Move inspect result to driver file, integrate with the procedure." />
+    <MESSAGE value="Save the last centroids and counts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Save the last centroids and counts." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

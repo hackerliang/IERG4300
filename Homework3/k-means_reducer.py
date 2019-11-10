@@ -18,12 +18,14 @@ for line in lines:
     if cluster_id not in clusters:
         clusters[cluster_id] = [partial_sum, count]
     else:
-        clusters[cluster_id] = [np.add(partial_sum, clusters[cluster_id][0]), clusters[cluster_id][1] + count]
+        clusters[cluster_id] = [
+            np.add(partial_sum, clusters[cluster_id][0]), clusters[cluster_id][1] + count]
 
 # Calculate new centroids.
 for key, value in clusters.items():
     # Numpy 1.7+: return 0 when divided by zero.
-    clusters[key] = np.true_divide(value[0], value[1], out=np.zeros_like(value[0]), where=value[1]!=0)
+    clusters[key] = np.true_divide(
+        value[0], value[1], out=np.zeros_like(value[0]), where=value[1] != 0)
 
 # Print
 for key, value in clusters.items():

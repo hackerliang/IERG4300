@@ -6,7 +6,8 @@ with open('centroids/centroids_{}.txt'.format(last_iter), 'r') as f:
     centroids = {}
     for line in f.readlines():
         idx, centroids_str = line.strip().split('\t')
-        centroids[int(idx)] = [np.asarray(centroids_str.strip()[1:-1].split(', '), dtype=float), 0]
+        centroids[int(idx)] = [np.asarray(centroids_str.strip()
+                                          [1:-1].split(', '), dtype=float), 0]
 
 with open('train_images.txt', 'r') as f:
     data = []
@@ -29,4 +30,5 @@ for item in data:
 with open('result.txt', 'w') as f:
     for key, value in centroids.items():
         # Keep 2 decimal places for the report.
-        f.write('{}\t{}|{}\n'.format(key, np.around(value[0], 2).tolist(), value[1]))
+        f.write('{}\t{}|{}\n'.format(
+            key, np.around(value[0], 2).tolist(), value[1]))

@@ -1,14 +1,14 @@
-from torchvision import datasets, transforms
-from torch.utils.data import DataLoader
-
 import numpy as np
+from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
 
 # Transform to normalized Tensors
 transform = transforms.Compose([transforms.ToTensor(),
                                 transforms.Normalize((0.1307,), (0.3081,))])
 
 # Download dataset, and normalize.
-train_dataset = datasets.MNIST('./MNIST/', train=True, transform=transform, download=True)
+train_dataset = datasets.MNIST(
+    './MNIST/', train=True, transform=transform, download=True)
 # test_dataset = datasets.MNIST('./MNIST/', train=False, transform=transform, download=True)
 
 
