@@ -191,7 +191,7 @@
       <workItem from="1572687091350" duration="2071000" />
       <workItem from="1572941354490" duration="13690000" />
       <workItem from="1573267847199" duration="14585000" />
-      <workItem from="1573355725731" duration="1943000" />
+      <workItem from="1573355725731" duration="2748000" />
     </task>
     <task id="LOCAL-00001" summary="Add Homework 3.">
       <created>1572692430030</created>
@@ -249,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573297974083</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Move inspect result to driver file, integrate with the procedure.">
+      <created>1573357864118</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1573357864118</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +284,8 @@
     <MESSAGE value="Clear bugs." />
     <MESSAGE value="Add inspect result code." />
     <MESSAGE value="Delete useless import." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete useless import." />
+    <MESSAGE value="Move inspect result to driver file, integrate with the procedure." />
+    <option name="LAST_COMMIT_MESSAGE" value="Move inspect result to driver file, integrate with the procedure." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -291,11 +299,6 @@
           <url>file://$PROJECT_DIR$/k-means_driver.py</url>
           <line>36</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/inspect_results.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

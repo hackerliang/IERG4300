@@ -107,13 +107,17 @@ def iteration(num_iterations):
         run_mrjob(i)
         get_new_centroids(i)
         logging.info('Finished iteration {}'.format(i))
-        # Inspect result for each 5 steps.
-        if i % 1 == 0:
-            logging.info('Inspecting results')
-            centroids_count, distance_sum = inspect_result(i)
-            distance_sums += [distance_sum]
-            distance_sums_iter += [i]
-            logging.info('Finished inspecting result.')
+        # Inspect result.
+        logging.info('Inspecting results')
+        centroids_count, distance_sum = inspect_result(i)
+        distance_sums += [distance_sum]
+        distance_sums_iter += [i]
+        logging.info('Finished inspecting result.')
+    # Save the last centroids and counts as result.
+    with open('result.txt', 'w') as f:
+        for key, value in centroids_count.items():
+            # Keep 2 decimal places for the report.
+            f.write('{}\t{}|{}\n'.format(key, np.around(value[0], 2).tolist(), value[1]))
     # Plot a graph for distance sums.
     plt.plot(distance_sums_iter, distance_sums)
     plt.xlabel('Iteration')
