@@ -77,6 +77,9 @@
       <module name="Homework3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -187,7 +190,8 @@
       <updated>1572687090194</updated>
       <workItem from="1572687091350" duration="2071000" />
       <workItem from="1572941354490" duration="13690000" />
-      <workItem from="1573267847199" duration="12912000" />
+      <workItem from="1573267847199" duration="14585000" />
+      <workItem from="1573355725731" duration="1943000" />
     </task>
     <task id="LOCAL-00001" summary="Add Homework 3.">
       <created>1572692430030</created>
@@ -238,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573296457695</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Delete useless import.">
+      <created>1573297974083</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1573297974083</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +276,8 @@
     <MESSAGE value="Adapt for EMR." />
     <MESSAGE value="Clear bugs." />
     <MESSAGE value="Add inspect result code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add inspect result code." />
+    <MESSAGE value="Delete useless import." />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete useless import." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -277,8 +289,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/k-means_driver.py</url>
-          <line>34</line>
+          <line>36</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/inspect_results.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -289,6 +306,6 @@
     <SUITE FILE_PATH="coverage/Homework3$k_means_reducer.coverage" NAME="k-means_reducer Coverage Results" MODIFIED="1572959711906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homework3$k_means_driver.coverage" NAME="k-means_driver Coverage Results" MODIFIED="1573293186127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homework3$k_means_mapper.coverage" NAME="k-means_mapper Coverage Results" MODIFIED="1572958138732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Homework3$inspect_results.coverage" NAME="inspect_results Coverage Results" MODIFIED="1573296389482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Homework3$inspect_results.coverage" NAME="inspect_results Coverage Results" MODIFIED="1573356070570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
