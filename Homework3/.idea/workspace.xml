@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ec7b0aa-0478-491e-af3a-ba3ca5190905" name="Default Changelist" comment="Add seed number.">
+    <list default="true" id="9ec7b0aa-0478-491e-af3a-ba3ca5190905" name="Default Changelist" comment="Pretty.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inspect_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/inspect_results.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +191,8 @@
       <workItem from="1572687091350" duration="2071000" />
       <workItem from="1572941354490" duration="13690000" />
       <workItem from="1573267847199" duration="14585000" />
-      <workItem from="1573355725731" duration="3603000" />
+      <workItem from="1573355725731" duration="4300000" />
+      <workItem from="1573436754761" duration="16221000" />
     </task>
     <task id="LOCAL-00001" summary="Add Homework 3.">
       <created>1572692430030</created>
@@ -262,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573358516877</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Pretty.">
+      <created>1573360326103</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1573360326103</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +301,8 @@
     <MESSAGE value="Delete useless import." />
     <MESSAGE value="Move inspect result to driver file, integrate with the procedure." />
     <MESSAGE value="Save the last centroids and counts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Save the last centroids and counts." />
+    <MESSAGE value="Pretty." />
+    <option name="LAST_COMMIT_MESSAGE" value="Pretty." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -304,7 +314,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/k-means_driver.py</url>
-          <line>36</line>
+          <line>34</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
@@ -316,6 +326,6 @@
     <SUITE FILE_PATH="coverage/Homework3$k_means_reducer.coverage" NAME="k-means_reducer Coverage Results" MODIFIED="1572959711906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homework3$k_means_driver.coverage" NAME="k-means_driver Coverage Results" MODIFIED="1573293186127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homework3$k_means_mapper.coverage" NAME="k-means_mapper Coverage Results" MODIFIED="1572958138732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Homework3$inspect_results.coverage" NAME="inspect_results Coverage Results" MODIFIED="1573356070570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Homework3$inspect_results.coverage" NAME="inspect_results Coverage Results" MODIFIED="1573458183985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
