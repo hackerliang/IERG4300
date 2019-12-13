@@ -7,7 +7,7 @@ from sklearn.decomposition import PCA
 
 last_iter = 20
 
-with open('Random Seed 1/centroids/centroids_{}.txt'.format(last_iter), 'r') as f:
+with open('Random Seed 3/centroids/centroids_{}.txt'.format(last_iter), 'r') as f:
     centroids = {}
     for line in f.readlines():
         cluster_idx, centroids_str = line.strip().split('\t')
@@ -83,9 +83,11 @@ for item in label_cluster_majority_label.iterrows():
     assigned_cluster = item[1]['assigned_cluster']
     # Compare ground truth and cluster label.
     if item[1]['ground_truth_label'] == item[1]['cluster_label']:
-        cluster_assignment_result[assigned_cluster][0] += 1
         cluster_assignment_result[assigned_cluster][1] += 1
-    else:
         cluster_assignment_result[assigned_cluster][0] += 1
+    else:
+        cluster_assignment_result[assigned_cluster][1] += 1
 
-print(cluster_assignment_result)
+print('Cluster\tcorrect, total\t%')
+for key, item in cluster_assignment_result.items():
+    print('{}\t{},{}\t{}'.format(key, item[0], item[1], item[0] / item[1]))
