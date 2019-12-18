@@ -59,4 +59,4 @@ def save_mnist():
 
 if __name__ == '__main__':
     download_mnist()
-    save_mnist()
+    # save_mnist()

@@ -14,9 +14,6 @@ def to_bit_vector(x, threshold):
 def minhash(file_name, k):
     # Read in input data.
     vec = np.load(file_name)
-    # Transfer to bit vector.
-    vfunc = np.vectorize(to_bit_vector)
-    vec = vfunc(vec, 200)
     # Initialize signature matrix.
     sig = np.empty((vec.shape[0], k))
     sig.fill(maxint)
