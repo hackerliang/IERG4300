@@ -1,3 +1,5 @@
+import sys
+
 import numpy as np
 
 
@@ -22,12 +24,12 @@ def find_similar_items(cluster_id, major_label):
     # Extract the bucket info for the representative image.
     representative_bucket_band = cluster_lsh_buckets[random_index]
 
-    # Find images that have at least 2 bands hashed to same buckets.
+    # Find images that have at least 1 bands hashed to same buckets.
     similar_matrix = np.apply_along_axis(np.isin, 0, cluster_lsh_buckets, representative_bucket_band)
     similar_items = []
     for idx, row in enumerate(similar_matrix):
         # Sum up a boolean array can get the number of Trues.
-        if np.sum(row) >= 2:
+        if np.sum(row) >= 1:
             similar_items.append(cluster_image_label[idx])
         else:
             continue
@@ -43,5 +45,7 @@ def find_similar_items(cluster_id, major_label):
 
 
 if __name__ == '__main__':
-    number_similar_items, number_same_label, acc = find_similar_items(0, 6)
-    print(number_similar_items, number_same_label, acc)
+    labels = [6, 0, 3, 1, 4, 1, 5, 8, 7, 0]
+    for i in range(10):
+        number_similar_items, number_same_label, acc = find_similar_items(i, labels[i])
+        print('Cluster {}, label {}: {}\t{}\t{}'.format(i, labels[i], number_similar_items, number_same_label, acc))
