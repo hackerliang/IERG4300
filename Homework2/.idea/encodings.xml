@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/SON/step_1_reducer_output.txt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/SON/step_2_mapper_output.txt" charset="UTF-8" />
-  </component>
-</project>

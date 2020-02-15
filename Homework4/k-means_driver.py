@@ -48,8 +48,8 @@ def run_mrjob(iteration_id):
         -mapper "/usr/bin/python3 k-means_mapper.py" \
         -file k-means_reducer.py \
         -reducer "/usr/bin/python3 k-means_reducer.py" \
-        -input s3://junru-big-data/mnist/train_images.txt \
-        -output s3://junru-big-data/mnist/output/{}/ \
+        -input s3://YOUR BUCKET/mnist/train_images.txt \
+        -output s3://YOUR BUCKET/mnist/output/{}/ \
         -cmdenv "ITER_NUM={}"
     """.format(iteration_id - 1, iteration_id, iteration_id)
     logging.info('Executing command {}.'.format(command))
@@ -58,7 +58,7 @@ def run_mrjob(iteration_id):
 
 def get_new_centroids(iteration_id):
     # Assign these values before running the program
-    bucket_name = 'junru-big-data'
+    bucket_name = 'YOUR BUCKET'
     object_name = 'mnist/output/{}/part-00000'.format(iteration_id)
     # Retrieve the object
     logging.info('Downloading result from S3.')

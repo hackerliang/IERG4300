@@ -1,6 +1,6 @@
 """SimilarUsers.py
 For Homework #1, IERG4300, S1 2019-2020, CUHK
-Written by Junru Zhong (1155130306)
+Written by Junru Zhong
 All rights reserved.
 
 Last modified: Sept 26, 2019

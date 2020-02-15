@@ -37,6 +37,6 @@ if __name__ == '__main__':
         # Read signature matrix.
         sig_matrix = np.load(sig_matrix_path)
         # Perform LSH.
-        bucket_band, lsh_table = lsh(sig_matrix, 10, 8, 8)
+        bucket_band, lsh_table = lsh(sig_matrix, 1000, 16, 4)
         # Save bucket band.
-        np.save('{}_bucket_band'.format(os.path.basename(sig_matrix_path)[:8]), bucket_band)
+        np.save('cluster_bucket_band\\{}_bucket_band'.format(os.path.basename(sig_matrix_path)[:8]), bucket_band)

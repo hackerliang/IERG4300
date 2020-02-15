@@ -27,7 +27,7 @@ def main():
     """Exercise get_object()"""
 
     # Assign these values before running the program
-    test_bucket_name = 'junru-big-data'
+    test_bucket_name = 'YOUR BUCKET NAME'
     test_object_name = 'mnist/output/1/part-00000'
 
     # Set up logging
